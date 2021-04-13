@@ -25,14 +25,5 @@ public abstract class Document {
 		   Extensions extensions = new FormatDoc();
 		   extensions.writeCode();
 	   }
-	 /*  
-	   public Memento saveText() {
-		   return new Memento(text);
-	   }
-	   
-	   public void restoreText(Memento memento) {
-		   this.text = memento.getText();
-	   }
-	   */
 	}
 
