@@ -11,24 +11,27 @@ public class User {
 	static CareTaker careTaker = new CareTaker();
 	static Memento memento = new Memento();
 	
+	// Метод ввода текста в файл
 	public void setText(String text)
 	{
 		originator.setText(text);
 		
 	}
 	
+	// Метод вывода текста из файла
 	public void printText()
 	{
 		System.out.println(originator.getText());
 	}
 	
-	
+	// Метод сохранения текущего текста
 	public void Save()
 	{
 		String timeStamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
 		careTaker.setMemento(originator.createMomento(timeStamp));
 	}
 	
+	// Метод вывода истории сохранений
 	public void printHistory()
 	{
 		for (int i = 0; i < careTaker.getHistory().size(); i++) {
@@ -37,16 +40,19 @@ public class User {
 	    }
 	}
 	
+	// Метод восстановления текста из последнего сохрнанения
 	public void getLastSave()
 	{
 		originator.getDataFromMomento(careTaker.getMemento());
 	}
 	
+	// Метод восстановления текста из сохранения по индексу
 	public void getSaveByIndex(int index)
 	{
 		originator.getDataFromMomento(careTaker.getMemento(index));
 	}
 	
+	// Метод вывода меню пользователя
 	public void printMenu()
 	{
 		System.out.println("Выберите пункт меню");

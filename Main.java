@@ -16,6 +16,7 @@ public class Main {
 			switch (choice)
 			{
 			case 1: System.out.println("¬ведите текст");
+					sc.nextLine();
 					text = sc.nextLine();
 					user.setText(text);
 					break;

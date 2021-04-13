@@ -9,15 +9,6 @@ public class CareTaker {
 	private int Size = 0;
 	private int CurrentIndex = -1;
 	
-//	private class Save {
-//		String time;
-//		Memento memento;
-//		Save(String time, Memento memento){
-//			this.time = time;
-//			this.memento = memento;
-//		}
-//	}
-	
 	public List<Memento> getHistory()
 	{
 		return history;
@@ -36,13 +27,9 @@ public class CareTaker {
 	}
 
 	public Memento getMemento() {
-//		if (Size == 0) {
-//			return null;
-//		}
 		if (CurrentIndex >= 0) {
-			int index = CurrentIndex;
 			CurrentIndex -= 1;
-			return history.get(index);
+			return history.get(CurrentIndex);
 		}
 		return null;
 	}
